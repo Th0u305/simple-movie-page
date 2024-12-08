@@ -16,7 +16,7 @@ const Carrousel = () => {
     <div
       id="carousel-7"
       data-carousel='{ "loadingClasses": "opacity-0", "isAutoPlay": true, "speed": 4000 }'
-      className=" w-full h-max md:h-96 lg:h-[30rem] xl:h-[57rem] relative bg-[#0000002f] mt-20 xl:mt-0"
+      className=" w-full h-max md:h-96 lg:h-[30rem] xl:h-[57rem] relative bg-[#0000002f] mt-16 md:mt-20 xl:mt-0"
     >
       <div class="carousel h-full rounded-none ">
         <div className="container_mouse absolute z-20 left-0 right-0 mx-auto bottom-5 lg:bottom-12 w-fit "></div>

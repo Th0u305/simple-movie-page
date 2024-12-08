@@ -16,9 +16,9 @@ import Swal from "sweetalert2";
 import { Rating } from "react-simple-star-rating";
 
 const SinglePages = () => {
-  const { user } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
-
+  
   const loaderData = useLoaderData();
 
   const params = useParams();
@@ -113,7 +113,7 @@ const SinglePages = () => {
           <div className="flex justify-center loaderDatas-center mt-5 mb-5">
             <div className="card-actions justify-center loaderDatas-center gap-7">
               <NavLink
-                to={`update`}
+                  to={`${user ? 'update': '/login'}`}
                 className="btn hover:scale-110 ease-in-out	duration-300 btn-wide h-14 bg-[#4CAF50] text-lg font-semibold text-white border-none hover:bg-[#2E7D32]"
               >
                 Update

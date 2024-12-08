@@ -9,9 +9,9 @@ const PrivateRoute = ({children}) => {
 
     const {user, loading} = useContext(AuthContext)
 
-    // if (loading) {
-    //     return <span class="loading loading-spinner loading-lg"></span>;
-    // }
+    if (loading) {
+        return <span class="loading loading-spinner loading-lg"></span>;
+    }
     if (user && user?.email) {
         return children;
     }

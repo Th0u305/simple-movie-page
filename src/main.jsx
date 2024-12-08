@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: "movies/:id",
         element: <SinglePages></SinglePages>,
-        loader: ({params}) => fetch(`https://movie-server-eight.vercel.app//${params.id}`)
+        loader: ({params}) => fetch(`https://movie-server-eight.vercel.app/allMovies/${params.id}`)
       },
       {
         path: "movies/:id/update",
