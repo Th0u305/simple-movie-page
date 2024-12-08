@@ -15,7 +15,6 @@ export default {
         Montserrat: ["Montserrat", "sans-serif"],
       },
     },
-
   },
   plugins: [
     require("flyonui"),
