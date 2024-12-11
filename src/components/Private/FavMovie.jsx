@@ -48,19 +48,19 @@ const FavMovie = () => {
                     />
                   </figure>
                   <div className="card-body gap-7">
-                    <p>Title: {item.movie.title}</p>
-                    <p>Release Year: {item.movie.year}</p>
-                    <p>Duration: {item.movie.runtime}</p>
-                    <p>Genre: {item.movie.genres}</p>
-                    <p>Country: {item.movie.countries}</p>
-                    <p> Description: {item.movie.fullplot}</p>
-                    <p>
+                    <p className="break-words text-wrap">Title: {item.movie.title}</p>
+                    <p className="break-words text-wrap">Release Year: {item.movie.year}</p>
+                    <p className="break-words text-wrap">Duration: {item.movie.runtime}</p>
+                    <p className="break-words text-wrap">Genre: {item.movie.genres}</p>
+                    <p className="break-words text-wrap">Country: {item.movie.countries}</p>
+                    <p className="break-words text-wrap"> Description: {item.movie.fullplot}</p>
+                    <p className="break-words text-wrap">
                       Language: {item.movie?.languages || "Data not available"}
                     </p>
-                    <p>Cast: {item.movie.cast}</p>
-                    <p>Directors: {item.movie.directors}</p>
-                    <p>Type: {item.movie.type}</p>
-                    <p>Writers: {item.movie.writers}</p>
+                    <p className="break-words text-wrap">Cast: {item.movie.cast}</p>
+                    <p className="break-words text-wrap">Directors: {item.movie.directors}</p>
+                    <p className="break-words text-wrap">Type: {item.movie.type}</p>
+                    <p className="break-words text-wrap">Writers: {item.movie.writers}</p>
 
                     <Rating></Rating>
                   </div>
@@ -96,7 +96,7 @@ const FavMovie = () => {
               to="/allMovies"
               className="btn hover:scale-110 ease-in-out	duration-300 h-14 bg-[#4CAF50] text-lg font-semibold text-white border-none hover:bg-[#2E7D32]"
             >
-              View Details
+              View All Movies
             </NavLink>
           </div>
         )}

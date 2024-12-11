@@ -16,7 +16,7 @@ import Swal from "sweetalert2";
 import { Rating } from "react-simple-star-rating";
 
 const SinglePages = () => {
-  const { user, setUser } = useContext(AuthContext);
+  const {setLoading, user, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
   
   const loaderData = useLoaderData();
@@ -96,17 +96,17 @@ const SinglePages = () => {
             />
           </figure>
           <div className="card-body gap-7">
-            <p>Title: {loaderData.title}</p>
-            <p>Release Year: {loaderData.year}</p>
-            <p>Duration: {loaderData.runtime}</p>
-            <p>Genre: {loaderData.genres}</p>
-            <p>Country: {loaderData.countries}</p>
-            <p> Description: {loaderData.fullplot}</p>
-            <p>Language: {loaderData?.languages || "Data not available"}</p>
-            <p>Cast: {loaderData.cast}</p>
-            <p>Directors: {loaderData.directors}</p>
-            <p>Type: {loaderData.type}</p>
-            <p>Writers: {loaderData.writers}</p>
+            <p className="break-words text-wrap">Title: {loaderData.title}</p>
+            <p className="break-words text-wrap">Release Year: {loaderData.year}</p>
+            <p className="break-words text-wrap">Duration: {loaderData.runtime}</p>
+            <p className="break-words text-wrap">Genre: {loaderData.genres}</p>
+            <p className="break-words text-wrap">Country: {loaderData.countries}</p>
+            <p className="break-words text-wrap"> Description: {loaderData.fullplot}</p>
+            <p className="break-words text-wrap">Language: {loaderData?.languages || "Data not available"}</p>
+            <p className="break-words text-wrap">Cast: {loaderData.cast}</p>
+            <p className="break-words text-wrap">Directors: {loaderData.directors}</p>
+            <p className="break-words text-wrap">Type: {loaderData.type}</p>
+            <p className="break-words text-wrap">Writers: {loaderData.writers}</p>
 
             <Rating></Rating>
           </div>
@@ -114,6 +114,7 @@ const SinglePages = () => {
             <div className="card-actions justify-center loaderDatas-center gap-7">
               <NavLink
                   to={`${user ? 'update': '/login'}`}
+                  onClick={setLoading(false)}
                 className="btn hover:scale-110 ease-in-out	duration-300 btn-wide h-14 bg-[#4CAF50] text-lg font-semibold text-white border-none hover:bg-[#2E7D32]"
               >
                 Update

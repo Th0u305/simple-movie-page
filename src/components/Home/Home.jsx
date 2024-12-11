@@ -16,11 +16,11 @@ const Home = () => {
   }, [movies]);
 
   return (
-    <div className=" mt-12 md:mt-28" id="home" ref={myRef}>
+    <div className=" mt-12 md:mt-28 flex flex-col items-center justify-center" id="home" ref={myRef}>
       <Helmet>
         <title>EcoVenture | Home</title>
       </Helmet>
-      <div className="p-5" >
+      <div className="p-5">
         <h1 className="text-3xl lg:text-5xl font-semibold text-center">
           Explore the World of Cinema
         </h1>
@@ -31,7 +31,7 @@ const Home = () => {
         </p>
       </div>
 
-      {loading && (
+      {sliceData.length > 0 ? (
         <div className="grid grid-rows-1 xl:grid-cols-3 gap-12 md:mt-0 mb-5 md:mb-12 p-10 lg:p-15 xl:p-0">
           {sliceData.map((item) => (
             <div key={item._id} className="">
@@ -44,12 +44,12 @@ const Home = () => {
                   />
                 </figure>
                 <div className="card-body gap-7">
-                  <p>Title: {item.title}</p>
-                  <p>Release Year: {item.year}</p>
-                  <p>Duration: {item.runtime}</p>
-                  <p>Genre: {item.genres}</p>
-                  <p> Description: {item.fullplot}</p>
-                  <p>Language: {item?.languages || "Data not available"}</p>
+                  <p className="break-words text-wrap">Title: {item.title}</p>
+                  <p className="break-words text-wrap">Release Year: {item.year}</p>
+                  <p className="break-words text-wrap">Duration: {item.runtime}</p>
+                  <p className="break-words text-wrap">Genre: {item.genres}</p>
+                  <p className="break-words text-wrap"> Description: {item.fullplot}</p>
+                  <p className="break-words text-wrap">Language: {item?.languages || "Data not available"}</p>
 
                   <Rating></Rating>
                 </div>
@@ -67,6 +67,8 @@ const Home = () => {
             </div>
           ))}
         </div>
+      ) : (
+        <span class="loading loading-spinner loading-lg mb-12"></span>
       )}
 
       <div className="flex justify-center items-center mb-12 ">
