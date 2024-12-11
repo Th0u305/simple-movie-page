@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "add": "^2.0.6",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
+    "bootstrap": "^5.3.3",
     "css-minimizer-webpack-plugin": "^7.0.0",
     "cssnano": "^7.0.6",
     "firebase": "^11.0.2",
@@ -20,12 +22,14 @@
     "flowbite-react": "^0.10.2",
     "flyonui": "^1.1.0",
     "localforage": "^1.10.0",
+    "lodash": "^4.17.21",
     "match-sorter": "^8.0.0",
     "react": "^18.3.1",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^2.0.5",
+    "react-hook-form": "^7.54.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.4.0",
     "react-rating": "^2.0.5",
@@ -33,8 +37,10 @@
     "react-scroll": "^1.9.0",
     "react-simple-star-rating": "^5.1.7",
     "sort-by": "^0.0.2",
+    "styled-components": "^6.1.13",
     "sweetalert2": "^11.14.5",
-    "sweetalert2-react-content": "^5.0.7"
+    "sweetalert2-react-content": "^5.0.7",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
