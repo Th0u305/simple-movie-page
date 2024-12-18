@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import "flyonui/flyonui";
 
 const Navbar = () => {
-  const { signOutUser, user } = useContext(AuthContext);
+  const {setLoading, signOutUser, user } = useContext(AuthContext);
   const { myRef } = useContext(AuthContext);
 
   const handleSignOutUser = () => {
@@ -64,7 +64,7 @@ const Navbar = () => {
     <>
       <li>
         <Link
-          onClick={() =>
+          onClick={() => setLoading(true) &&
             myRef.current?.scrollIntoView({
               behavior: "smooth",
             })
@@ -81,7 +81,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          onClick={() =>
+          onClick={() => setLoading(true) &&
             myRef.current?.scrollIntoView({
               behavior: "smooth",
             })
@@ -98,7 +98,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          onClick={() =>
+          onClick={() => setLoading(false) &&
             myRef.current?.scrollIntoView({
               behavior: "smooth",
             })
@@ -108,14 +108,14 @@ const Navbar = () => {
               ? "text-gray-600 focus:text-gray-200 focus:bg-[#2b2b2b] dropdown-item "
               : "xl:text-white focus:bg-gray-300 dropdown-item "
           }
-          to={`${user ? "addMovie" : "/login"}`}
+          to={`${"addMovie"}`}
         >
           Add-Movies
         </Link>
       </li>
       <li>
         <Link
-          onClick={() =>
+          onClick={() => setLoading(false) &&
             myRef.current?.scrollIntoView({
               behavior: "smooth",
             })
@@ -125,14 +125,14 @@ const Navbar = () => {
               ? "text-gray-600 focus:text-gray-200 focus:bg-[#2b2b2b] dropdown-item "
               : "xl:text-white focus:bg-gray-300 dropdown-item "
           }
-          to={`${user ? "favoriteMovie" : "/login"}`}
+          to={`${"favoriteMovie"}`}
         >
           Favorite
         </Link>
       </li>
       <li>
         <Link
-          onClick={() =>
+          onClick={() => setLoading(true) &&
             myRef.current?.scrollIntoView({
               behavior: "smooth",
             })
@@ -222,7 +222,7 @@ const Navbar = () => {
           </div>
         </ul>
       </div>
-      <div class="navbar-end xl:navbar-start items-center gap-5">
+      <div className="navbar-end xl:navbar-start items-center gap-5">
         <div className="inline-flex items-center lg:gap-2">
           <a href="/">
             <img className="w-15" src={logo} alt="" />
@@ -259,14 +259,14 @@ const Navbar = () => {
           {navMenu}
         </ul>
       </div>
-      <div class="navbar-end flex items-center gap-1 w-fit xl:w-1/2">
-        <label class="input-group max-w-56 rounded-full sm:flex relative">
-          <span class="input-group-text">
-            <span class="icon-[tabler--search] text-base-content/80 size-5"></span>
+      <div className="navbar-end flex items-center gap-1 w-fit xl:w-1/2">
+        <label className="input-group max-w-56 rounded-full sm:flex relative">
+          <span className="input-group-text">
+            <span className="icon-[tabler--search] text-base-content/80 size-5"></span>
           </span>
           <input
             type="search"
-            class="input grow rounded-e-full"
+            className="input grow rounded-e-full"
             placeholder="Search"
             value={input}
             onChange={(e) => handleChange(e.target.value)}

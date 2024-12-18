@@ -17,7 +17,6 @@ import { useRef } from 'react';
 const ContextProvider = ({ children }) => {
 
   const [movies, setMovies] = useState([])
-  const [favMovies, setFavMovies] = useState([])
   const [singleMovies, setSingleMovies] = useState([])
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -31,12 +30,6 @@ const ContextProvider = ({ children }) => {
     fetch('https://movie-server-eight.vercel.app/allMovies')
     .then(res => res.json())
     .then(data =>setMovies(data))
-  },[])
-
-  useEffect(()=>{
-    fetch('https://movie-server-eight.vercel.app/allFavMovie')
-    .then(res => res.json())
-    .then(data =>setFavMovies(data))
   },[])
 
 
@@ -91,8 +84,6 @@ const ContextProvider = ({ children }) => {
   const contextData = {
  
     movies,
-    favMovies,
-    setFavMovies,
     singleMovies,
     setSingleMovies,
     signInWithGoogle,

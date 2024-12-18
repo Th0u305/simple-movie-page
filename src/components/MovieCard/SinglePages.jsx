@@ -59,7 +59,7 @@ const SinglePages = () => {
       },
       body: JSON.stringify({
         movie: loaderData, // movie data
-        userEmail: "user@example.com", // pass the user's email or ID
+        userEmail: `${user.email}`, // pass the user's email or ID
       }),
     })
       .then((res) => res.json())
